@@ -1,0 +1,45 @@
+# path to the checkpoint file containing the model
+model_path: resUnet_noDeformation_lr_0.007/best_checkpoint.pytorch
+# Should the patches be stored in memory or written directly to H5 during prediction.
+# Set to True if you have enough RAM cause it's way faster
+store_predictions_in_memory: True
+# evaluation metric configuration
+eval_metric:
+  name: MeanIoU
+  # a target label that is ignored during metric evaluation
+  ignore_index: null
+  skip_channels:
+    - 0
+# model configuration
+model:
+  # model class
+  name: ResidualUNet3D
+  # number of input channels to the model
+  in_channels: 1
+  # number of output channels
+  out_channels: 20
+  # determines the order of operators in a single layer (crg - Conv3d+ReLU+GroupNorm)
+  layer_order: cge
+  # feature maps scale factor
+  f_maps: 16
+  # basic module
+  basic_module: ExtResNetBlock ###############################################################################
+  # number of groups in the groupnorm
+  num_groups: 8
+  # apply element-wise nn.Sigmoid after the final 1x1 convolution, otherwise apply nn.Softmax
+  final_sigmoid: false
+# data loaders configuration
+datasets:
+  mean: 466.0
+  std: 379.0
+  test_batch_size: 1
+  # how many subprocesses to use for data loading
+  num_workers: 8
+  # paths to the datasets
+  out_dir: '/public/pangshumao/data/spine_out_resUnet_noDeformation_lr_0.007'
+  transformer:
+    test:
+      raw:
+        - name: Normalize
+        - name: ToTensor
+          expand_dims: true
