@@ -50,6 +50,8 @@ Shumao Pang, Chunlan Pang, Lei Zhao, Yangfan Chen, Zhihai Su, Yujia Zhou, Meiyan
 >>>>>>......
 >>>>>>|-- mask_case215.nii.gz
 
+Note that the files in data/coarse/in/nii are the same with those in data/fine/in/nii.
+
 ### Run the main.sh script for training and test:
 nohup ./main.sh > main.out &
 
