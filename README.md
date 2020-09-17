@@ -19,52 +19,53 @@ Shumao Pang, Chunlan Pang, Lei Zhao, Yangfan Chen, Zhihai Su, Yujia Zhou, Meiyan
 # Getting Started
 ### Data Preparation
 + The file structure should look like:
->|-- data
->>|-- coarse
->>>|-- in
->>>>|-- h5py
 
->>>>|-- nii
->>>>>|-- original_mr
->>>>>>|-- Case1.nii.gz
+|-- data
+>|-- coarse
+>>|-- in
+>>>|-- h5py
 
->>>>>>|-- Case2.nii.gz
+>>>|-- nii
+>>>>|-- original_mr
+>>>>>|-- Case1.nii.gz
 
->>>>>>......
+>>>>>|-- Case2.nii.gz
 
->>>>>>|-- Case215.nii.gz
->>>>>
->>>>>|-- mask
->>>>>>|-- mask_case1.nii.gz
+>>>>>......
 
->>>>>>|-- mask_case2.nii.gz
+>>>>>|-- Case215.nii.gz
+>>>>
+>>>>|-- mask
+>>>>>|-- mask_case1.nii.gz
 
->>>>>>......
+>>>>>|-- mask_case2.nii.gz
 
->>>>>>|-- mask_case215.nii.gz
+>>>>>......
+
+>>>>>|-- mask_case215.nii.gz
 >
->>|-- fine
->>>|-- in
->>>>|-- h5py
+>|-- fine
+>>|-- in
+>>>|-- h5py
 
->>>>|-- nii
->>>>>|-- original_mr
->>>>>>|-- Case1.nii.gz
+>>>|-- nii
+>>>>|-- original_mr
+>>>>>|-- Case1.nii.gz
 
->>>>>>|-- Case2.nii.gz
+>>>>>|-- Case2.nii.gz
 
->>>>>>......
+>>>>>......
 
->>>>>>|-- Case215.nii.gz
->>>>>
->>>>>|-- mask
->>>>>>|-- mask_case1.nii.gz
+>>>>>|-- Case215.nii.gz
+>>>>
+>>>>|-- mask
+>>>>>|-- mask_case1.nii.gz
 
->>>>>>|-- mask_case2.nii.gz
+>>>>>|-- mask_case2.nii.gz
 
->>>>>>......
+>>>>>......
 
->>>>>>|-- mask_case215.nii.gz
+>>>>>|-- mask_case215.nii.gz
 
 Note that the files in data/coarse/in/nii are the same with those in data/fine/in/nii.
 
