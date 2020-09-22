@@ -22,7 +22,7 @@ Some codes were borrowed from
 
 # Getting Started
 ### Data Preparation
-+ The file structure should look like:
++ The data structure should look like:
 
 |-- data
 >|-- coarse
