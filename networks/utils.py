@@ -272,7 +272,7 @@ def dice_all_class(prediction, target, class_num=20, eps=1e-10):
     '''
     dices = []
     for i in range(1, class_num):
-        if i not in target:
+        if i not in target and i not in prediction:
             continue
         target_per_class = np.where(target == i, 1, 0)
         prediction_per_class = np.where(prediction == i, 1, 0)
