@@ -552,14 +552,14 @@ def main():
             eval_scores.append(eval_score)
 
             prob = np.squeeze(fine_prob_volume, axis=0) # numpy, [C, D, H, W]
-            seg = np.argmax(prob, axis=0).astype(label.dtype) # numpy, [D, H, W]
+            seg = np.argmax(prob, axis=0).astype(np.uint8) # numpy, [D, H, W]
             seg = seg.transpose((1,2,0)) # numpy, [H, W, D]
 
             path_split = raw_path.split(os.sep)
             seg_path = os.sep.join([out_dir, 'seg_' + path_split[-1]])
 
 
-            segNii = nib.Nifti1Image(seg.astype(label.dtype), affine=label_nii.affine)
+            segNii = nib.Nifti1Image(seg.astype(np.uint8), affine=raw_nii.affine)
             nib.save(segNii, seg_path)
     if args.eval_metric == 'DiceCoefficient':
         print('mean dice = %f' % np.mean(eval_scores))
@@ -572,8 +572,6 @@ def main():
     total_time = end_time - start_time
     mean_time = total_time / test_ind.size
     print('mean time for segmenting one volume: %.2f seconds' % mean_time)
-
-
 
 if __name__ == '__main__':
     main()

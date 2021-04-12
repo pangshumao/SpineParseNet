@@ -291,7 +291,8 @@ if __name__ == '__main__':
             unary_dices = []
             crf_dices = []
             for i in test_ind:
-                h_mr = nib.load(os.path.join(mrDir, 'Case' + str(i) + '.nii.gz')).get_data() # [h, w, d]
+                h_mr_nii = nib.load(os.path.join(mrDir, 'Case' + str(i) + '.nii.gz'))
+                h_mr = h_mr_nii.get_data() # [h, w, d]
                 h_pre_seg = nib.load(os.path.join(pre_seg_dir, 'seg_Case' + str(i) + '.nii.gz')).get_data() # [h, w, d]
                 h_mask_nii = nib.load(os.path.join(maskDir, 'mask_case' + str(i) + '.nii.gz'))
                 h_mask = h_mask_nii.get_data() # [h, w, d]
@@ -321,7 +322,7 @@ if __name__ == '__main__':
                 unary_dices.append(unary_dice)
                 crf_dices.append(crf_dice)
                 print('case %d, unary Dice = %.4f, crf Dice = %.4f' % (i, unary_dice, crf_dice))
-                segNii = nib.Nifti1Image(seg.astype(h_mask.dtype), affine=h_mask_nii.affine)
+                segNii = nib.Nifti1Image(seg.astype(np.uint8), affine=h_mr_nii.affine)
                 seg_path = os.path.join(out_dir, 'seg_Case' + str(i) + '.nii.gz')
                 nib.save(segNii, seg_path)
 
@@ -344,8 +345,9 @@ if __name__ == '__main__':
             count = 0
             unary_dices = []
             crf_dices = []
-            for i in range(206, 216):
-                h_mr = nib.load(os.path.join(mrDir, 'Case' + str(i) + '.nii.gz')).get_data()  # [h, w, d]
+            for i in test_ind:
+                h_mr_nii = nib.load(os.path.join(mrDir, 'Case' + str(i) + '.nii.gz'))
+                h_mr = h_mr_nii.get_data()  # [h, w, d]
                 h_pre_seg = nib.load(os.path.join(pre_seg_dir, 'seg_Case' + str(i) + '.nii.gz')).get_data()  # [h, w, d]
                 h_mask_nii = nib.load(os.path.join(maskDir, 'mask_case' + str(i) + '.nii.gz'))
                 h_mask = h_mask_nii.get_data()  # [h, w, d]
@@ -372,7 +374,7 @@ if __name__ == '__main__':
                 unary_dices.append(unary_dice)
                 crf_dices.append(crf_dice)
                 print('case %d, unary Dice = %.4f, crf Dice = %.4f' % (i, unary_dice, crf_dice))
-                segNii = nib.Nifti1Image(seg.astype(h_mask.dtype), affine=h_mask_nii.affine)
+                segNii = nib.Nifti1Image(seg.astype(np.uint8), affine=h_mr_nii.affine)
                 seg_path = os.path.join(out_dir, 'seg_Case' + str(i) + '.nii.gz')
                 nib.save(segNii, seg_path)
 
