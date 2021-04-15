@@ -1,6 +1,6 @@
 # SpineParseNet: Spine Parsing for Volumetric MR Image by a 	Two-Stage Segmentation Framework with Semantic Image Representation
 
-This repository contains the code for the paper:
+This repository is the official implementation of the paper:
 
 Shumao Pang, Chunlan Pang, Lei Zhao, Yangfan Chen, Zhihai Su, Yujia Zhou, Meiyan Huang, Wei Yang, Hai Lu, and Qianjin Feng, "[SpineParseNet: Spine Parsing for Volumetric MR Image by a Two-Stage Segmentation Framework with Semantic Image Representation](https://ieeexplore.ieee.org/document/9201093), " IEEE Transactions on Medical Imaging, 2021, doi: 10.1109/TMI.2020.3025087.
 
