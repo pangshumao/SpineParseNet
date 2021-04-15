@@ -79,4 +79,13 @@ Note that the files in data/coarse/in/nii are the same with those in data/fine/i
 nohup ./main.sh > main.out &
 
 # Citation
-@ARTICLE{9201093,  author={S. {Pang} and C. {Pang} and L. {Zhao} and Y. {Chen} and Z. {Su} and Y. {Zhou} and M. {Huang} and W. {Yang} and H. {Lu} and Q. {Feng}},  journal={IEEE Transactions on Medical Imaging},   title={SpineParseNet: Spine Parsing for Volumetric MR Image by a Two-Stage Segmentation Framework With Semantic Image Representation},   year={2021},  volume={40},  number={1},  pages={262-273},  doi={10.1109/TMI.2020.3025087}}
+@article{pang2020spineparsenet,
+  title={SpineParseNet: Spine Parsing for Volumetric MR Image by a Two-Stage Segmentation Framework With Semantic Image Representation},
+  author={Pang, Shumao and Pang, Chunlan and Zhao, Lei and Chen, Yangfan and Su, Zhihai and Zhou, Yujia and Huang, Meiyan and Yang, Wei and Lu, Hai and Feng, Qianjin},
+  journal={IEEE Transactions on Medical Imaging},
+  volume={40},
+  number={1},
+  pages={262--273},
+  year={2021},
+  publisher={IEEE}
+}
