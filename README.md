@@ -2,7 +2,7 @@
 
 This repository contains the code for the paper:
 
-Shumao Pang, Chunlan Pang, Lei Zhao, Yangfan Chen, Zhihai Su, Yujia Zhou, Meiyan Huang, Wei Yang, Hai Lu, and Qianjin Feng, "[SpineParseNet: Spine Parsing for Volumetric MR Image by a Two-Stage Segmentation Framework with Semantic Image Representation](https://ieeexplore.ieee.org/document/9201093), " IEEE Transactions on Medical Imaging, 2020, doi: 10.1109/TMI.2020.3025087.
+Shumao Pang, Chunlan Pang, Lei Zhao, Yangfan Chen, Zhihai Su, Yujia Zhou, Meiyan Huang, Wei Yang, Hai Lu, and Qianjin Feng, "[SpineParseNet: Spine Parsing for Volumetric MR Image by a Two-Stage Segmentation Framework with Semantic Image Representation](https://ieeexplore.ieee.org/document/9201093), " IEEE Transactions on Medical Imaging, 2021, doi: 10.1109/TMI.2020.3025087.
 
 Website: https://www.researchgate.net/profile/Shumao_Pang2
 
@@ -78,3 +78,5 @@ Note that the files in data/coarse/in/nii are the same with those in data/fine/i
 ### Run the main.sh script for training and test:
 nohup ./main.sh > main.out &
 
+# Citation
+@ARTICLE{9201093,  author={S. {Pang} and C. {Pang} and L. {Zhao} and Y. {Chen} and Z. {Su} and Y. {Zhou} and M. {Huang} and W. {Yang} and H. {Lu} and Q. {Feng}},  journal={IEEE Transactions on Medical Imaging},   title={SpineParseNet: Spine Parsing for Volumetric MR Image by a Two-Stage Segmentation Framework With Semantic Image Representation},   year={2021},  volume={40},  number={1},  pages={262-273},  doi={10.1109/TMI.2020.3025087}}
