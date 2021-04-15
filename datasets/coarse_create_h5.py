@@ -32,9 +32,6 @@ if __name__ == '__main__':
     parser.add_argument("--fold_num", type=int, default=5,
                         help="the folder number for cross-validation.")
 
-    parser.add_argument("--fold_num", type=int, default=5,
-                        help="the folder number for cross-validation.")
-
     parser.add_argument("--train_num", type=int, default=168,
                         help="the subjects number of training dataset.")
 
