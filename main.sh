@@ -15,6 +15,9 @@ for fold_ind in 1 2 3 4 5;do
 	python -u coarse_semantic_feature.py --device=cuda:0 --fold_ind=${fold_ind} --model=DeepLabv3_plus_gcn_skipconnection_3d --data_dir=${data_root_dir}/coarse --gcn_mode=2 --ds_weight=0.3 --loss=CrossEntropyLoss --pre_trained
 done
 echo "step 5: create the h5 dataset for segmentation refinement stage................................................................"
+for fold_ind in 1 2 3 4 5;do
+	cp ${data_root_dir}/coarse/split_ind_fold${fold_ind}.npz ${data_root_dir}/fine/split_ind_fold${fold_ind}.npz
+done
 python -u ./datasets/fine_create_h5.py --coarse_dir=${data_root_dir}/coarse --fine_dir=${data_root_dir}/fine
 echo "step 6: training the 2D ResUNet model for refinement stage....................................................................."
 for fold_ind in 1 2 3 4 5;do
