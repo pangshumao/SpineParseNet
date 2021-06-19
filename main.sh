@@ -6,7 +6,7 @@ echo "step 2: training the DeepLabv3+ model for coarse segmentation stage.......
 for fold_ind in 1 2 3 4 5;do
 	python -u train_coarse.py --model=DeepLabv3_plus_skipconnection_3d --fold_ind=${fold_ind} --data_dir=${data_root_dir}/coarse --no-pre_trained --epochs=100 --device=cuda:0 --learning_rate=0.001 --loss=CrossEntropyLoss
 done
-echo "step 3: training the 3D GCSN model used the pretrained DeepLabv3+ model for coarse segmentation stage.........................."
+echo "step 3: training the 3D GCSN model with the pretrained DeepLabv3+ model for coarse segmentation stage.........................."
 for fold_ind in 1 2 3 4 5;do
 	python -u train_coarse.py --model=DeepLabv3_plus_gcn_skipconnection_3d --fold_ind=${fold_ind} --data_dir=${data_root_dir}/coarse --pre_trained --epochs=50 --device=cuda:0 --learning_rate=0.001 --gcn_mode=2 --ds_weight=0.3 --loss=CrossEntropyLoss
 done
