@@ -24,6 +24,7 @@ Some codes were borrowed from
 
 # Getting Started
 ### Data Preparation
++ The dataset can be downloaded at: https://www.spinesegmentation-challenge.com
 + The data structure should look like:
 
 |-- data
